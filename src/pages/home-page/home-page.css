@@ -1,0 +1,48 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+.home {
+  background-color: lightcyan;
+}
+
+.textColorBlack {
+  color: black;
+}
+
+.textColorWhite {
+  color: white;
+}
+
+.homeSearch {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1%;
+    margin-bottom: 1%;
+}
+
+.homeMain {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+
+.sousMenu {
+  flex-grow: 2;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-right: 1%;
+  background-color: white;
+  height: fit-content;
+}
+
+.homeContent {
+  flex-grow: 6;
+  min-height: 100vh;
+  background-color: white;
+}
+
+
