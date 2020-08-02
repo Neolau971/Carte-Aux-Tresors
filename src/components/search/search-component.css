@@ -1,0 +1,7 @@
+.SearchCss {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1%;
+    margin-bottom: 1%;
+}

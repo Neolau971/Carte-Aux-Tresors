@@ -1,0 +1,8 @@
+.subMenu {
+    flex-grow: 2;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-right: 1%;
+    background-color: white;
+    height: fit-content;
+  }
