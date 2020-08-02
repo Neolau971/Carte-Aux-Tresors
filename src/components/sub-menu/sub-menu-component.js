@@ -8,11 +8,13 @@ export class SubMenuComponent extends React.Component {
         return (
             <div className="subMenu">
                 <Nav defaultActiveKey="/home" className="flex-column">
-                    <Nav.Link href="/home">Active</Nav.Link>
-                    <Nav.Link eventKey="link-1" className="textColorBlack">Link 1</Nav.Link>
-                    <Nav.Link eventKey="link-2" className="textColorBlack">Link 2</Nav.Link>
-                    <Nav.Link eventKey="link-3" className="textColorBlack">Link 3</Nav.Link>
-                    <Nav.Link eventKey="link-4" className="textColorBlack">Link 4</Nav.Link>
+                    <Nav.Link href="/home" className="textColorWhite">Active</Nav.Link>
+                    <Nav.Link eventKey="link-1" className="textColorWhite">Link 1</Nav.Link>
+                    <Nav.Link eventKey="link-2" className="textColorWhite">Link 2</Nav.Link>
+                    <Nav.Link eventKey="link-3" className="textColorWhite">Link 3</Nav.Link>
+                    <Nav.Link eventKey="link-4" className="textColorWhite">Link 4</Nav.Link>
+                    <Nav.Link eventKey="link-5" className="textColorWhite">Link 5</Nav.Link>
+                    <Nav.Link eventKey="link-6" className="textColorWhite">Link 6</Nav.Link>
                 </Nav>
             </div>
         )

@@ -19,13 +19,14 @@ html {
 .homeMain {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
     margin: 1%;
 }
 
 .homeContent {
-  flex-grow: 6;
   min-height: 100vh;
   background-color: white;
+  width: 80%;
 }
 
 

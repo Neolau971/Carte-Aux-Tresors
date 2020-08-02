@@ -1,0 +1,23 @@
+.contenuContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    border-bottom: 1px solid gray;
+}
+
+img {
+    float: left;
+    margin: 2%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.textContainer {
+    width: 80%;
+}
+
+.dateContainer {
+    text-align: right;
+}
