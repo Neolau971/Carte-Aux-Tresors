@@ -1,7 +1,6 @@
 .contenuContainer {
     display: flex;
     flex-direction: column;
-    margin: 1%;
     border-bottom: 1px solid gray;
 }
 

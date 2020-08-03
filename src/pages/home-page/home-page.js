@@ -2,7 +2,6 @@ import { Navbar, Nav } from 'react-bootstrap'
 import './home-page.css'
 import React from 'react'
 import { ContenuPage } from '../home-page/contenu-page/contenu-page'
-import { SearchComponent } from '../../components/search/search-component'
 import { MenuComponent } from '../../components/menu/menu-component'
 import { SubMenuComponent } from '../../components/sub-menu/sub-menu-component'
 
@@ -10,7 +9,6 @@ export class HomePage extends React.Component {
   render() {
     return (
       <div className="home">
-        <SearchComponent />
         <MenuComponent />
         <div className="homeMain">
           <SubMenuComponent />
