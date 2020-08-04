@@ -18,12 +18,12 @@ export class HomePage extends React.Component {
           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <div className="textColorWhite" style={{ paddingRight: '2%' }}>Copyright 2017-2021 Société.com. All rights reserved.</div>
             <Nav className="mr-auto">
-              <Nav.Link href="#features">FAQ</Nav.Link>
-              <Nav.Link href="#pricing">contacts</Nav.Link>
+              <Nav.Link href="/footer-page">FAQ</Nav.Link>
+              <Nav.Link href="/footer-page">contacts</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Linkedin</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">Autre réseaux</Nav.Link>
+              <Nav.Link href="/footer-page">Linkedin</Nav.Link>
+              <Nav.Link eventKey={2} href="/footer-page">Autre réseaux</Nav.Link>
             </Nav>
           </Navbar>
         </div>

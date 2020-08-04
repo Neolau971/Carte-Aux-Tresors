@@ -1,0 +1,25 @@
+.footerMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerContent {
+    min-height: 40vh;
+    background-color: white;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20%;
+    margin-bottom: 70%;
+}
+
+.footerElement {
+margin: 8%;
+}
+
+.imgFooter {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 1%;
+}
+

@@ -19,7 +19,6 @@ html {
 .homeMain {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
 }
 
 .homeContent {

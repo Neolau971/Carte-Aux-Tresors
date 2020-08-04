@@ -33,11 +33,14 @@ export class ContenuPage extends React.Component {
     render() {
         return (
             <div>
-                {contenuliste.map((element) => {
+                {contenuliste.map((element, index) => {
                     return (
-                        <div className="contenuContainer">
+                        <div key={index} className="contenuContainer">
                             <h3>{element.titre}</h3>
-                            <div className="clearfix">{element.image}<div className="textContainer">{element.text}</div></div>
+                            <div className="clearfix">
+                                <div className="imgContainer">{element.image}</div>
+                                <div className="textContainer">{element.text}</div>
+                            </div>
                             <div className="dateContainer"><h6>{element.date}</h6></div>
                         </div>
                     )
