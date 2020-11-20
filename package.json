@@ -1,0 +1,22 @@
+{
+  "name": "carte-aux-tresors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neolau971/neorws.git"
+  },
+  "author": "Neolau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neolau971/neorws/issues"
+  },
+  "homepage": "https://github.com/Neolau971/neorws#readme",
+  "dependencies": {
+    "node": "^15.2.1"
+  }
+}
