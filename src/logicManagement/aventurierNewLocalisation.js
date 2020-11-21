@@ -1,6 +1,9 @@
-function newPosition(currentAventurier, positionMontagne) {
+function newPosition(currentAventurier, positionMontagne, allAventuriers) {
     let positionMontagnes = []
+    let postionAventuriers = []
+
     positionMontagnes = positionMontagne
+    postionAventuriers = allAventuriers
 
     let newAxeH = currentAventurier.axeH
     let newAxeV = currentAventurier.axeV
@@ -15,6 +18,10 @@ function newPosition(currentAventurier, positionMontagne) {
         positionMontagnes.forEach(montagne => {
            ( montagne.axeV === newAxeV && montagne.axeH === newAxeH ) ? (newAxeV = currentAventurier.axeV) && (newAxeH = currentAventurier.axeH) : ""
         })
+
+        postionAventuriers.forEach(aventurier => {
+            ( aventurier.axeV === newAxeV && aventurier.axeH === newAxeH ) ? (newAxeV = currentAventurier.axeV) && (newAxeH = currentAventurier.axeH) : ""
+         })
 
     return [newAxeH, newAxeV]
 }
@@ -35,13 +42,13 @@ function newDirection(lastOrientation, directive) {
     return newOrientation
 }
 
-module.exports = function AventurierNewLocalisation(currentAventurier, directive, positionMontagne) {
+module.exports = function AventurierNewLocalisation(currentAventurier, directive, positionMontagne, allAventuriers) {
     let newPositionH = currentAventurier.axeH
     let newPositionV = currentAventurier.axeV
     let newOrientation = currentAventurier.lastOrientation
 
     if(directive === "A") {
-        let newPositionTab = newPosition(currentAventurier, positionMontagne)
+        let newPositionTab = newPosition(currentAventurier, positionMontagne, allAventuriers)
         newPositionH = newPositionTab[0]
         newPositionV = newPositionTab[1]
     } else {

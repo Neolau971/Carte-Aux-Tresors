@@ -23,7 +23,12 @@ module.exports = function Main() {
         let aventurierUpdate = []
 
         eachAventurier.forEach((currentAventurier) => {
-            let aventurierLocalisation = AventurierNewLocalisation(currentAventurier, currentAventurier.sequence[i], positionMontagne)
+            let aventurierLocalisation = AventurierNewLocalisation(
+                currentAventurier,
+                currentAventurier.sequence[i],
+                positionMontagne,
+                eachAventurier
+                )
             currentAventurier.axeH = aventurierLocalisation[0]
             currentAventurier.axeV = aventurierLocalisation[1]
             currentAventurier.lastOrientation = aventurierLocalisation[2]
