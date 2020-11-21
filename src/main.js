@@ -1,26 +1,42 @@
 const AventurierNewLocalisation = require("../src/aventurierNewLocalisation")
-const GestionTresors = require("../src/gestionTresors")
+const UpdateTresors = require("../src/gestionTresors")
 
 module.exports = function Main() {
-
     let positionMontagne = [{axeH : 1, axeV : 0}, {axeH : 2, axeV : 1}]
     let tresors = [{axeH : 0, axeV : 3, nombre: 2}, {axeH : 1, axeV : 3, nombre: 3}]
-    let tresorInitial = [{axeH : 0, axeV : 3, nombre: 2}, {axeH : 1, axeV : 3, nombre: 3}]
-    let aventuriers = [{nom : "Lara", axeH : 1, axeV : 1, lastOrientation : "S", sequence : "AADADAGGA"}]
+    let aventuriers = [
+        {nom : "Lara", axeH : 1, axeV : 1, lastOrientation : "S", sequence : "AADADAGGA", tresorsFound : 0},
+        {nom : "Bob", axeH : 0, axeV : 1, lastOrientation : "E", sequence : "ADAAGAGAG", tresorsFound : 0}
+    ]
 
-    let currentAventurier = {nom : "Lara", axeH : 1, axeV : 1, lastOrientation : "S", sequence : "AADADAGGA"}
+    function aventuriersUpdateInfos(i) {
+        let eachAventurier = []
+        eachAventurier = aventuriers
 
-        for (let i = 0; i < currentAventurier.sequence.length; i++) {
+        let aventurierUpdate = []
 
-            let aventurierLocalisation = AventurierNewLocalisation(currentAventurier.axeH, currentAventurier.axeV, currentAventurier.lastOrientation, currentAventurier.sequence[i])
+        eachAventurier.forEach((currentAventurier) => {
+            let aventurierLocalisation = AventurierNewLocalisation(currentAventurier, currentAventurier.sequence[i], positionMontagne)
             currentAventurier.axeH = aventurierLocalisation[0]
             currentAventurier.axeV = aventurierLocalisation[1]
             currentAventurier.lastOrientation = aventurierLocalisation[2]
 
-            tresors = GestionTresors.updateTresors(currentAventurier.axeH, currentAventurier.axeV, tresors, currentAventurier.sequence[i])
-        }
+            let updatedTresors = UpdateTresors(currentAventurier, tresors, currentAventurier.sequence[i])
+            tresors = updatedTresors[0]
+            currentAventurier.tresorsFound = updatedTresors[1]
 
-        let tresorFinal = GestionTresors.tresorsOfAventurier(tresorInitial, tresors)
+            aventurierUpdate.push(currentAventurier)
+
+        })
+        aventuriers = aventurierUpdate
+    }
+
+
+    for (let i = 0; i < aventuriers[0].sequence.length; i++) {
+        aventuriersUpdateInfos(i)
+    }
+
+    console.log(aventuriers, tresors)
         
-        console.log(tresors, currentAventurier, tresorFinal)
+        //console.log(tresors, currentAventurier, tresorFinal)
 } 

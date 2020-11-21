@@ -1,7 +1,10 @@
-function newPosition(axeH, axeV, lastOrientation) {
+function newPosition(currentAventurier, positionMontagne) {
+    let positionMontagnes = []
+    positionMontagnes = positionMontagne
 
-    let newAxeH = axeH
-    let newAxeV = axeV
+    let newAxeH = currentAventurier.axeH
+    let newAxeV = currentAventurier.axeV
+    let lastOrientation = currentAventurier.lastOrientation
 
         if (lastOrientation === "S" || lastOrientation === "N") {
             lastOrientation === "S" ? (newAxeV = newAxeV + 1) : (newAxeV = newAxeV - 1)
@@ -9,8 +12,11 @@ function newPosition(axeH, axeV, lastOrientation) {
             lastOrientation === "E" ? (newAxeH = newAxeH + 1) : (newAxeH = newAxeH - 1)
         }
 
-    return [newAxeH, newAxeV]
+        positionMontagnes.forEach(montagne => {
+           ( montagne.axeV === newAxeV && montagne.axeH === newAxeH ) ? (newAxeV = currentAventurier.axeV) && (newAxeH = currentAventurier.axeH) : ""
+        })
 
+    return [newAxeH, newAxeV]
 }
 
 function newDirection(lastOrientation, directive) {
@@ -27,21 +33,19 @@ function newDirection(lastOrientation, directive) {
     }
 
     return newOrientation
-    
 }
 
-module.exports = function AventurierNewLocalisation(axeH, axeV, lastOrientation, directive) {
-    
-    let newPositionH = axeH
-    let newPositionV = axeV
-    let newOrientation = lastOrientation
+module.exports = function AventurierNewLocalisation(currentAventurier, directive, positionMontagne) {
+    let newPositionH = currentAventurier.axeH
+    let newPositionV = currentAventurier.axeV
+    let newOrientation = currentAventurier.lastOrientation
 
     if(directive === "A") {
-        let newPositionTab = newPosition(axeH, axeV, lastOrientation)
+        let newPositionTab = newPosition(currentAventurier, positionMontagne)
         newPositionH = newPositionTab[0]
         newPositionV = newPositionTab[1]
     } else {
-        newOrientation = newDirection(lastOrientation, directive)
+        newOrientation = newDirection(currentAventurier.lastOrientation, directive)
     }
 
     return [newPositionH, newPositionV, newOrientation]

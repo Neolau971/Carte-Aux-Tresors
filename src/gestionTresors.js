@@ -1,32 +1,20 @@
-module.exports = {
+module.exports = function UpdateTresors(currentAventurier, tresors, directive) {
+    let tresorsinfos = []
+    tresorsinfos = tresors
 
-    updateTresors : function(axeHAventurier, axeVAventurier, tresors, directive) {
-        let tresorsinfos = []
-        tresorsinfos = tresors
-    
-        if (directive !== "D" && directive !== "G") {
-            tresorsinfos.forEach(tresor => {
-                (tresor.axeH === axeHAventurier && tresor.axeV === axeVAventurier) ? ( tresor.nombre = tresor.nombre -1 ) : ("")
-            })
-        } 
-    
-        return tresorsinfos
+    let axeHAventurier = currentAventurier.axeH
+    let axeVAventurier = currentAventurier.axeV
+    let aventurierTresor = currentAventurier.tresorsFound
 
-    },
-
-    tresorsOfAventurier : function (tresorInitial, tresors) {
-        let tresorsFound = 0
-        let tresorInitState = []
-        let tresorsFinalState = []
-
-        tresorInitState = tresorInitial
-        tresorsFinalState = tresors
-
-        for (let i = 0; i < tresorInitState.length; i++) {
-            tresorsFound = tresorsFound + (tresorInitState[i].nombre - tresorsFinalState[i].nombre)
-        }
-
-        return tresorsFound
-    
+    if (directive !== "D" && directive !== "G") {
+        tresorsinfos.forEach(tresor => {
+            if(tresor.axeH === axeHAventurier && tresor.axeV === axeVAventurier && tresor.nombre > 0) {
+                tresor.nombre = tresor.nombre -1
+                aventurierTresor = aventurierTresor + 1
+            } 
+        })
     }
+    
+    return [tresorsinfos, aventurierTresor]
+
 }
