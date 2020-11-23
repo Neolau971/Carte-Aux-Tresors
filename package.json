@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neolau971/neorws.git"
+    "url": "git+https://github.com/Neolau971/Carte-Aux-Tresors.git"
   },
   "author": "Neolau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Neolau971/neorws/issues"
+    "url": "https://github.com/Neolau971/Carte-Aux-Tresors/issues"
   },
-  "homepage": "https://github.com/Neolau971/neorws#readme",
+  "homepage": "https://github.com/Neolau971/Carte-Aux-Tresors#readme",
   "dependencies": {
     "node": "^15.2.1"
   }
